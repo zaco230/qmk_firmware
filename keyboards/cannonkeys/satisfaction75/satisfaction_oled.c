@@ -16,17 +16,22 @@ bool oled_task_kb(void) {
     if (!oled_task_needs_to_repaint()) {
         return false;
     }
-    oled_clear();
+    //oled_clear(); // uncomment if not using bongocat
     if (clock_set_mode) {
+        oled_clear(); // comment if not using bongocat
         draw_clock();
         return false;;
     }
     switch (oled_mode) {
         default:
+            oled_clear(); // comment if not using bongocat
+            break;
         case OLED_DEFAULT:
+            oled_clear(); // comment if not using bongocat
             draw_default();
             break;
         case OLED_TIME:
+            oled_clear(); // comment if not using bongocat
             draw_clock();
             break;
         case OLED_BONGO:
